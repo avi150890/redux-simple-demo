@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 function Total() {
-  const total = 0;
+  const total = useSelector(state => state.pr.total);
+  const loginDetails = useSelector(state => state.lr.loginDetail);
   return (
     <div className='customDiv'>
-      <h3>total Components</h3>
+      <h3>Total Components - User:- {loginDetails}</h3>
       <hr />
+      <h2>Total: {total}</h2>
     </div>
   )
 }
